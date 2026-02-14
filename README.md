@@ -39,15 +39,31 @@
 
 ### 1.Información del producto vendido.
 
+```bash
+SELECT producto.nombre, producto.marca, detalle_venta.cantidad, detalle_venta.subtotal
+FROM producto INNER JOIN detalle_venta ON detalle_venta.id_producto = producto.id_producto
+```
+
 <img width="955" height="586" alt="image" src="https://github.com/user-attachments/assets/d5ab1daa-dfbf-408b-acdc-bac86c7ab43d" />
 
 ### 2. Cliente que han realizados ventas.
 
-<img width="955" height="586" alt="image" src="https://github.com/user-attachments/assets/ee501b59-3aa1-4580-ac27-33edb666db3b" 
+```bash
+SELECT cliente.nombre, cliente.correo, venta.fecha, venta.total
+FROM cliente INNER JOIN venta ON venta.id_cliente = cliente.id_cliente
+```
+
+<img width="955" height="586" alt="image" src="https://github.com/user-attachments/assets/f191fbf5-e22a-4f88-aae3-32eeb5d2b59a" />
+
 
 ### 3.Listar productos donde el precio este entre 50.000 y 800.000.
 
-<img width="1000" height="399" alt="image" src="https://github.com/user-attachments/assets/2af92073-25ee-43ba-a1f4-5bcb6239d6be" />
+```bash
+SELECT id_producto, nombre, marca, precio FROM producto
+WHERE precio BETWEEN 50000 AND 800000 ORDER BY (precio) DESC;
+```
+
+<img width="955" height="586" alt="image" src="https://github.com/user-attachments/assets/2af92073-25ee-43ba-a1f4-5bcb6239d6be" />
 
 
 
